@@ -1,5 +1,5 @@
 FROM node:carbon
-WORKDIR /usr/src/app
+WORKDIR /home/cloud_user/docker_workdir
 COPY package*.json ./
 RUN npm install
 COPY . .
