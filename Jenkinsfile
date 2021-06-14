@@ -30,12 +30,12 @@ pipeline {
                     script {
                         
                         try {
-                            sh "docker stop train-schedule"
-                            sh "docker rm train-schedule"
+                            sh "docker stop crawlerp/train-schedule"
+                            sh "docker rm crawlerp/train-schedule"
                         } catch (err) {
                             echo: 'caught error: $err'
                         }
-                        sh "docker run --restart always --name train-schedule -p 8080:8080 -d crawlerp/train-schedule:${env.BUILD_NUMBER}"
+                        sh "docker run --restart always -p 8080:8080 -d crawlerp/train-schedule"
                     }
                 
             }
